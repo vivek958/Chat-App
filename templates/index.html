@@ -1,0 +1,38 @@
+<!-- index.html template -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Whatsup</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  
+  <div class="header">
+    <center><h1>Welcome to Whatsup!</h1></center>
+  </div>
+
+  <form method="post" action="{{ url_for('send') }}">
+    <div class="input-container">
+      <input type="text" id="message" name="message" placeholder="Type a message...">
+      <button type="submit" class="send-button">Send</button>
+    </div>
+  </form>
+  
+<div id="messages-container">
+  {% for message in messages %}
+    <p>{{ message }}</p>
+  {% endfor %}
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.0/socket.io.js"></script>
+<script>
+  var socket = io.connect('http://' + document.domain + ':' + location.port);
+
+  socket.on('new_message', function(data) {
+    messages = document.getElementById('messages-container');
+    messages.innerHTML += '<p>' + data.username + ': ' + data.message + '</p>';
+  });
+</script>
+
+</body>
+</html>

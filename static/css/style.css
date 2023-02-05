@@ -1,0 +1,79 @@
+/* style.css */
+
+/* General styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #f7f7f7;
+  }
+  
+  /* Header styles */
+  .header {
+    background-color: #075e54;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .header h1 {
+    margin: 0;
+    font-size: 28px;
+  }
+  
+  /* Messages container styles */
+  .messages-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    height: calc(100% - 180px);
+    overflow-y: auto;
+  }
+  
+  /* Message bubble styles */
+  .message-bubble {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    max-width: 60%;
+  }
+  
+  .message-bubble p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  /* Input container styles */
+  .input-container {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-top: 1px solid #ebebeb;
+    padding: 0 20px;
+  }
+  
+  .input-container input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  .input-container .send-button {
+    background-color: #075e54;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .input-container .send-button:hover {
+    background-color: #06768c;
+  }
+  
